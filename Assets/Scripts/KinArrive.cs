@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class KinematicArrive : KinematicMovement
+public class KinArrive : Movement
 {
     public GameObject Target;
     public float MaxSpeed;
@@ -11,7 +11,11 @@ public class KinematicArrive : KinematicMovement
     public float radius;
     float TimeToTarget = 0.25f;
 
-
+    private void Start()
+    {
+        IsKinematic = true; 
+    }
+    
     public override SteeringOutput GetSteering(Agent character)
     {
         SteeringOutput result;
@@ -29,7 +33,8 @@ public class KinematicArrive : KinematicMovement
             result.Linear*= MaxSpeed;
         }
 
-        result.Angular = NewOrientation(result.Linear);
+        character.Orientation = NewOrientation(result.Linear, character.Orientation);
+        result.Angular = 0;
 
         return result;
     }

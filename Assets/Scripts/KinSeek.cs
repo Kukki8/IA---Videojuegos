@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class KinematicSeek : KinematicMovement
+public class KinSeek : Movement
 {
     public GameObject Target;
     public float MaxSpeed;
 
-
+    private void Start()
+    {
+        IsKinematic = true; 
+    }
     public override SteeringOutput GetSteering(Agent character)
     {
         SteeringOutput result;
@@ -17,8 +18,9 @@ public class KinematicSeek : KinematicMovement
         result.Linear.Normalize();
         result.Linear*= MaxSpeed;
 
-        result.Angular = NewOrientation(result.Linear);
-
+        character.Orientation = NewOrientation(result.Linear,character.Orientation);
+        result.Angular = 0;
+        
         return result;
     }
 }
