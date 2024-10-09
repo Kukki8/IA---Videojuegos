@@ -16,7 +16,7 @@ public class Separation : Movement
 
         foreach(Agent target in Targets){
 
-            Vector3 direction = target.Position - character.Position;
+            Vector3 direction = character.Position - target.Position;
             float distance = direction.magnitude;
 
             if(distance < Threshold)

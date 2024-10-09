@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -11,6 +12,7 @@ public struct SteeringOutput
 }
 public class Agent : MonoBehaviour
 {
+    public Animator animator = null;
     public Movement Behaviour;
     public float MaxSpeed;
     public bool Stop;
@@ -18,6 +20,7 @@ public class Agent : MonoBehaviour
     private float m_orientation;
     private Vector3 m_velocity;
     private float m_rotation;
+
     SteeringOutput m_steeringOutput;
 
     // Campos/propiedades especiales (intermediario)
@@ -49,7 +52,6 @@ public class Agent : MonoBehaviour
 
     void Update()
     {
-
         m_position += m_velocity*Time.deltaTime; 
 
         //Se debe cancelar la Y, ya que solo estamos trabajando en 2 dimensiones :3
@@ -68,14 +70,21 @@ public class Agent : MonoBehaviour
         m_velocity += m_steeringOutput.Linear*Time.deltaTime;
         m_rotation += m_steeringOutput.Angular*Time.deltaTime;
 
+        if(m_velocity != Vector3.zero)
+        {
+            animator.SetBool("Walk",true);
+        }
+
         if(Stop){
 
             if(m_steeringOutput.Linear == Vector3.zero){
                 m_velocity = Vector3.zero;
+                animator.SetBool("Walk",false);
             }
             if(m_steeringOutput.Angular == 0){
                 m_rotation = 0;
             }
+            
         }
 
         if(m_velocity.magnitude > MaxSpeed && !Behaviour.IsKinematic)
