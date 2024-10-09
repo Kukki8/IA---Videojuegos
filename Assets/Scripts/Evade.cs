@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Evade : Flee
 {
     public float MaxPrediction;
-    public Agent PursueTarget;
+    public Agent EvadeTarget;
     public Agent ExplicitTarget;
 
     public override SteeringOutput GetSteering(Agent character)
     {
-        Vector3 direction = PursueTarget.Position - character.Position;
+        Vector3 direction = EvadeTarget.Position - character.Position;
         float distance = direction.magnitude;   
 
         float speed = character.Velocity.magnitude;   
@@ -25,9 +23,9 @@ public class Evade : Flee
             prediction = distance/speed;
         }
 
-        Project(PursueTarget);
+        Project(EvadeTarget);
         base.Target = ExplicitTarget;
-        base.Target.Position += PursueTarget.Velocity*prediction;
+        base.Target.Position += EvadeTarget.Velocity*prediction;
 
         return base.GetSteering(character);
 
