@@ -1,9 +1,5 @@
 using UnityEngine;
 
-///////////////////////
-////////REVISAR!!//////
-///////////////////////
-
 public class PredictivePF : Seek
 {
     public Path Path;

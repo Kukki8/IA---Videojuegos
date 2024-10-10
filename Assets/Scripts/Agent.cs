@@ -13,6 +13,7 @@ public class Agent : MonoBehaviour
     public Movement Behaviour;
     public float MaxSpeed;
     public bool Stop;
+    public bool Input;
     private Vector3 m_position;
     private float m_orientation;
     private Vector3 m_velocity;
@@ -49,12 +50,14 @@ public class Agent : MonoBehaviour
 
     void Update()
     {
+
         m_position += m_velocity*Time.deltaTime; 
 
         //Se debe cancelar la Y, ya que solo estamos trabajando en 2 dimensiones :3
         m_position.y = 0;
         m_orientation += m_rotation*Time.deltaTime;
         transform.position = m_position;
+        Debug.Log(m_position);
         transform.eulerAngles = new Vector3(0,m_orientation*Mathf.Rad2Deg,0);
 
         if(Behaviour == null){

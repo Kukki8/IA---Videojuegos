@@ -499,7 +499,7 @@ PrefabInstance:
       objectReference: {fileID: 919132149484319050}
     - target: {fileID: 4750990738516017514, guid: 8612ad952b9a5ef47a4196e5f051dc9f, type: 3}
       propertyPath: Stop
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4750990738516017514, guid: 8612ad952b9a5ef47a4196e5f051dc9f, type: 3}
       propertyPath: Behaviour

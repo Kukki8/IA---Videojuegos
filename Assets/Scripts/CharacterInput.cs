@@ -11,8 +11,8 @@ public class CharacterInput : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        character.Velocity = -moveDirection * Speed;
+        Vector3 moveDirection = new Vector3(Input.GetAxisRaw("Vertical"), 0f, -Input.GetAxisRaw("Horizontal"));
+        character.Velocity = moveDirection * Speed;
     }
 
 }

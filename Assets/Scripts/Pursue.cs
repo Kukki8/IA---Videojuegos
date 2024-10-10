@@ -28,7 +28,6 @@ public class Pursue : Seek
         base.Target.Position += PursueTarget.Velocity*prediction;
 
         return base.GetSteering(character);
-
     }
 
     private void Project(Agent target)
