@@ -1,15 +1,14 @@
 
 public class Flee : Movement
 {
-    public Agent Target;
     public float MaxAcceleration;
     public float radius;
 
-    public override SteeringOutput GetSteering(Agent character)
+    public override SteeringOutput GetSteering(Kinematic character)
     {
         SteeringOutput result;
 
-        result.Linear =  character.Position - Target.Position;
+        result.Linear =  character.Position - m_target.Position;
 
         // Radio exterior para dejar de huir
         if(result.Linear.magnitude > radius){

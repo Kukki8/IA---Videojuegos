@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class VelocityMatching : Movement
 {
-    public Agent Target;
     public float MaxAcceleration;
     float timeToTarget = 0.1f;
 
-    public override SteeringOutput GetSteering(Agent character)
+    public override SteeringOutput GetSteering(Kinematic character)
     {
         SteeringOutput result;
 
-        result.Linear = Target.Velocity - character.Velocity;
+        result.Linear = m_target.Velocity - character.Velocity;
         result.Linear /= timeToTarget;
 
         if(result.Linear.magnitude> MaxAcceleration)

@@ -182,7 +182,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af9b0c647aecfd5458cf48a2eac7013a, type: 2}
+  - {fileID: 2100000, guid: 7c60ae5d330436b4c8cd83c323dbb340, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -335,6 +335,14 @@ PrefabInstance:
       propertyPath: Behaviour
       value: 
       objectReference: {fileID: 1328804364}
+    - target: {fileID: 5354715267251578223, guid: 09c4a6665d9021848ae25120213cec44, type: 3}
+      propertyPath: Behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354715267251578223, guid: 09c4a6665d9021848ae25120213cec44, type: 3}
+      propertyPath: Behaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 1328804364}
     - target: {fileID: 6099894004961849021, guid: 09c4a6665d9021848ae25120213cec44, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -416,7 +424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9457bf849f8a6444ca5902b22515472e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsKinematic: 0
+  Target: {fileID: 0}
+  IsKinematic: 1
   maxSpeed: 0.5
   maxRotation: 10
 --- !u!1 &1484941531 stripped
@@ -436,7 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9457bf849f8a6444ca5902b22515472e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsKinematic: 0
+  Target: {fileID: 0}
+  IsKinematic: 1
   maxSpeed: 0.4
   maxRotation: 80
 --- !u!1001 &1490774369
@@ -513,6 +523,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4750990738516017514, guid: 8612ad952b9a5ef47a4196e5f051dc9f, type: 3}
       propertyPath: Behaviour
+      value: 
+      objectReference: {fileID: 1484941532}
+    - target: {fileID: 4750990738516017514, guid: 8612ad952b9a5ef47a4196e5f051dc9f, type: 3}
+      propertyPath: Behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750990738516017514, guid: 8612ad952b9a5ef47a4196e5f051dc9f, type: 3}
+      propertyPath: Behaviours.Array.data[0]
       value: 
       objectReference: {fileID: 1484941532}
     m_RemovedComponents:
@@ -694,6 +712,14 @@ PrefabInstance:
       propertyPath: Behaviour
       value: 
       objectReference: {fileID: 501072769158949905}
+    - target: {fileID: 4750990738516017514, guid: 8612ad952b9a5ef47a4196e5f051dc9f, type: 3}
+      propertyPath: Behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750990738516017514, guid: 8612ad952b9a5ef47a4196e5f051dc9f, type: 3}
+      propertyPath: Behaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 501072769158949905}
     m_RemovedComponents:
     - {fileID: 4317453205681208971, guid: 8612ad952b9a5ef47a4196e5f051dc9f, type: 3}
     m_RemovedGameObjects: []
@@ -720,7 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9457bf849f8a6444ca5902b22515472e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsKinematic: 0
+  Target: {fileID: 0}
+  IsKinematic: 1
   maxSpeed: 0.4
   maxRotation: 20
 --- !u!1 &919132149484319050 stripped
@@ -742,6 +769,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354715267251578223, guid: 09c4a6665d9021848ae25120213cec44, type: 3}
       propertyPath: Behaviour
+      value: 
+      objectReference: {fileID: 1329633163926443706}
+    - target: {fileID: 5354715267251578223, guid: 09c4a6665d9021848ae25120213cec44, type: 3}
+      propertyPath: Behaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354715267251578223, guid: 09c4a6665d9021848ae25120213cec44, type: 3}
+      propertyPath: Behaviours.Array.data[0]
       value: 
       objectReference: {fileID: 1329633163926443706}
     - target: {fileID: 6099894004961849021, guid: 09c4a6665d9021848ae25120213cec44, type: 3}
@@ -825,7 +860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9457bf849f8a6444ca5902b22515472e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsKinematic: 0
+  Target: {fileID: 0}
+  IsKinematic: 1
   maxSpeed: 0.5
   maxRotation: 30
 --- !u!1660057539 &9223372036854775807

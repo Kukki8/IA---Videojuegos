@@ -2,22 +2,16 @@ using UnityEngine;
 
 public class KinArrive : Movement
 {
-    public GameObject Target;
     public float MaxSpeed;
 
     public float radius;
     float TimeToTarget = 0.25f;
-
-    private void Start()
-    {
-        IsKinematic = true; 
-    }
     
-    public override SteeringOutput GetSteering(Agent character)
+    public override SteeringOutput GetSteering(Kinematic character)
     {
         SteeringOutput result;
 
-        result.Linear = Target.transform.position - character.transform.position;
+        result.Linear = m_target.Position - character.Position;
 
         if(result.Linear.magnitude < radius){
             return new SteeringOutput();

@@ -213,7 +213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af9b0c647aecfd5458cf48a2eac7013a, type: 2}
+  - {fileID: 2100000, guid: 7c60ae5d330436b4c8cd83c323dbb340, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -440,9 +440,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b43ec3d2b1b4340ac5391568a7eb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviour: {fileID: 0}
+  animator: {fileID: 0}
+  Behaviours: []
   MaxSpeed: 0
   Stop: 0
+  Input: 0
+  KinematicData:
+    Position: {x: 0, y: 0, z: 0}
+    Orientation: 0
+    Velocity: {x: 0, y: 0, z: 0}
+    Rotation: 0
 --- !u!4 &248944478
 Transform:
   m_ObjectHideFlags: 0
@@ -508,9 +515,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b43ec3d2b1b4340ac5391568a7eb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviour: {fileID: 300516779}
+  animator: {fileID: 0}
+  Behaviours: []
   MaxSpeed: 5
   Stop: 1
+  Input: 0
+  KinematicData:
+    Position: {x: 0, y: 0, z: 0}
+    Orientation: 0
+    Velocity: {x: 0, y: 0, z: 0}
+    Rotation: 0
 --- !u!114 &300516775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,14 +537,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bd3e208bd3b634e9b3d86b90f500dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsKinematic: 0
   Target: {fileID: 0}
+  IsKinematic: 0
   MaxAngularAcceleration: 1
   MaxRotation: 2
   targetRadius: 0.1
   slowRadius: 1
-  FaceTarget: {fileID: 248944477}
-  ExplicitTarget: {fileID: 519741284}
   WanderOffset: 1
   WanderRadius: 0.5
   WanderRate: 2
@@ -548,11 +560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ed678b54f8d5040aaf37fa1b15befa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsKinematic: 0
   Target: {fileID: 0}
+  IsKinematic: 0
   MaxAcceleration: 5
   Path: {fileID: 223534367}
-  ChaseTarget: {fileID: 1999149704}
   pathOffset: 1
   currentParam: 1
   currentPos: 1
@@ -568,11 +579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ddddff7d0eb2142add5a5b60bdf3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsKinematic: 0
   Target: {fileID: 0}
+  IsKinematic: 0
   MaxAcceleration: 5
   Path: {fileID: 1350028681}
-  ChaseTarget: {fileID: 1999149704}
   pathOffset: 1
   currentParam: 1
   currentPos: 1
@@ -589,6 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8114c7813191fa44d8d83d0b484010b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 0}
   IsKinematic: 0
   maxAcceleration: 5
   Targets:
@@ -746,9 +757,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b43ec3d2b1b4340ac5391568a7eb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviour: {fileID: 0}
+  animator: {fileID: 0}
+  Behaviours: []
   MaxSpeed: 0
   Stop: 0
+  Input: 0
+  KinematicData:
+    Position: {x: 0, y: 0, z: 0}
+    Orientation: 0
+    Velocity: {x: 0, y: 0, z: 0}
+    Rotation: 0
 --- !u!4 &519741285
 Transform:
   m_ObjectHideFlags: 0
@@ -1221,8 +1239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfd59d490fee9c49a89696d114e6703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsKinematic: 0
   Target: {fileID: 300516774}
+  IsKinematic: 0
   MaxAcceleration: 1
 --- !u!114 &1482675036
 MonoBehaviour:
@@ -1236,9 +1254,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b43ec3d2b1b4340ac5391568a7eb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviour: {fileID: 1482675035}
+  animator: {fileID: 0}
+  Behaviours: []
   MaxSpeed: 2
   Stop: 1
+  Input: 0
+  KinematicData:
+    Position: {x: 0, y: 0, z: 0}
+    Orientation: 0
+    Velocity: {x: 0, y: 0, z: 0}
+    Rotation: 0
 --- !u!1 &1501481073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,9 +1623,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b43ec3d2b1b4340ac5391568a7eb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviour: {fileID: 0}
+  animator: {fileID: 0}
+  Behaviours: []
   MaxSpeed: 2
   Stop: 1
+  Input: 0
+  KinematicData:
+    Position: {x: 0, y: 0, z: 0}
+    Orientation: 0
+    Velocity: {x: 0, y: 0, z: 0}
+    Rotation: 0
 --- !u!1 &1999149703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,9 +1662,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b43ec3d2b1b4340ac5391568a7eb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviour: {fileID: 0}
+  animator: {fileID: 0}
+  Behaviours: []
   MaxSpeed: 0
   Stop: 0
+  Input: 0
+  KinematicData:
+    Position: {x: 0, y: 0, z: 0}
+    Orientation: 0
+    Velocity: {x: 0, y: 0, z: 0}
+    Rotation: 0
 --- !u!4 &1999149705
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,9 +1735,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b43ec3d2b1b4340ac5391568a7eb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Behaviour: {fileID: 0}
+  animator: {fileID: 0}
+  Behaviours: []
   MaxSpeed: 0
   Stop: 0
+  Input: 0
+  KinematicData:
+    Position: {x: 0, y: 0, z: 0}
+    Orientation: 0
+    Velocity: {x: 0, y: 0, z: 0}
+    Rotation: 0
 --- !u!1 &2115376051
 GameObject:
   m_ObjectHideFlags: 0

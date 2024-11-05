@@ -3,12 +3,17 @@ using UnityEngine;
 public class Evade : Flee
 {
     public float MaxPrediction;
-    public Agent EvadeTarget;
-    public Agent ExplicitTarget;
+    Kinematic m_explicitTarget;
 
-    public override SteeringOutput GetSteering(Agent character)
+    protected override void Start()
     {
-        Vector3 direction = EvadeTarget.Position - character.Position;
+        m_explicitTarget = new Kinematic(Vector3.zero, 0, Vector3.zero, 0);
+        base.Start();
+    }
+
+    public override SteeringOutput GetSteering(Kinematic character)
+    {
+        Vector3 direction = m_target.Position - character.Position;
         float distance = direction.magnitude;   
 
         float speed = character.Velocity.magnitude;   
@@ -23,20 +28,19 @@ public class Evade : Flee
             prediction = distance/speed;
         }
 
-        Project(EvadeTarget);
-        base.Target = ExplicitTarget;
-        base.Target.Position += EvadeTarget.Velocity*prediction;
+        Project(m_target);
+        m_target = m_explicitTarget;
+        m_target.Position += m_target.Velocity * prediction;
 
         return base.GetSteering(character);
 
     }
 
-    private void Project(Agent target)
+    private void Project(Kinematic target)
     {
-        ExplicitTarget.Position = target.Position;
-        ExplicitTarget.Velocity = target.Velocity;
-        ExplicitTarget.Orientation = target.Orientation;
-        ExplicitTarget.Rotation = target.Rotation;
-
+        m_explicitTarget.Position = target.Position;
+        m_explicitTarget.Orientation = target.Orientation;
+        m_explicitTarget.Velocity = target.Velocity;
+        m_explicitTarget.Rotation = target.Rotation;
     }
 }

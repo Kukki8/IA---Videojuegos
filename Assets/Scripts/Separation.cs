@@ -9,14 +9,14 @@ public class Separation : Movement
     public Agent[] Targets;
     public float Threshold;
     public float DecayCoefficient;
-    public override SteeringOutput GetSteering(Agent character)
+    public override SteeringOutput GetSteering(Kinematic character)
     {
         SteeringOutput result;
         result.Linear = Vector3.zero;
 
         foreach(Agent target in Targets){
 
-            Vector3 direction = character.Position - target.Position;
+            Vector3 direction = character.Position - target.KinematicData.Position;
             float distance = direction.magnitude;
 
             if(distance < Threshold)

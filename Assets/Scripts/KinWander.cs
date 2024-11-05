@@ -5,11 +5,7 @@ public class KinWander : Movement
     public float maxSpeed;
     public float maxRotation;
 
-    private void Start()
-    {
-        IsKinematic = true; 
-    }
-    public override SteeringOutput GetSteering(Agent character)
+    public override SteeringOutput GetSteering(Kinematic character)
     {
         SteeringOutput result;
 

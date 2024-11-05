@@ -1,31 +1,24 @@
 using UnityEngine;
 
-///////////////////////
-////////REVISAR!!//////
-///////////////////////
-
 public class Arrive : Movement
 {
-
-    public GameObject Target;
     public float MaxAcceleration;
     public float MaxSpeed;
     public float targetRadius;
     public float slowRadius;
     private float timeToTarget = 0.1f;
 
-    public override SteeringOutput GetSteering(Agent character)
+    public override SteeringOutput GetSteering(Kinematic character)
     {
         SteeringOutput result;
 
-        Vector3 direction = Target.transform.position - character.transform.position;
+        Vector3 direction = m_target.Position - character.Position;
         float distance = direction.magnitude;
 
         if(distance < targetRadius)
         {
             //Chequear: null check?
             return new SteeringOutput();
-
         }
 
         float targetSpeed = 0;

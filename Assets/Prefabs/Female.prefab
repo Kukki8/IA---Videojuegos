@@ -32,7 +32,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6027977684240759472}
-  - {fileID: 8202409603044856015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -142.553, z: 0}
 --- !u!114 &4750990738516017514
@@ -48,9 +47,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7268983399417421892}
-  Behaviour: {fileID: 0}
+  Behaviours: []
   MaxSpeed: 5
   Stop: 1
+  Input: 0
+  KinematicData:
+    Position: {x: 0, y: 0, z: 0}
+    Orientation: 0
+    Velocity: {x: 0, y: 0, z: 0}
+    Rotation: 0
 --- !u!95 &7268983399417421892
 Animator:
   serializedVersion: 5
@@ -72,54 +77,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &7034693995975397229
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8202409603044856015}
-  - component: {fileID: 34176405594839175}
-  m_Layer: 0
-  m_Name: ExplicitTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8202409603044856015
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7034693995975397229}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3073327486368792863}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &34176405594839175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7034693995975397229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b43ec3d2b1b4340ac5391568a7eb32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  Behaviour: {fileID: 0}
-  MaxSpeed: 0
-  Stop: 0
 --- !u!1001 &6065527059442802011
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,19 +2,14 @@ using UnityEngine;
 
 public class KinFlee : Movement
 {
-    public GameObject Target;
     public float MaxSpeed;
     public float radius;
 
-    private void Start()
-    {
-        IsKinematic = true; 
-    }
-    public override SteeringOutput GetSteering(Agent character)
+    public override SteeringOutput GetSteering(Kinematic character)
     {
         SteeringOutput result;
 
-        result.Linear = character.transform.position - Target.transform.position;
+        result.Linear = character.Position - m_target.Position;
 
         // Radio exterior para dejar de huir
         if(result.Linear.magnitude > radius){
@@ -24,7 +19,7 @@ public class KinFlee : Movement
         result.Linear.Normalize();
         result.Linear*= MaxSpeed;
 
-        character.Orientation = NewOrientation(result.Linear,character.Orientation);
+        character.Orientation = NewOrientation(result.Linear, character.Orientation);
         result.Angular = 0;
         return result;
     }

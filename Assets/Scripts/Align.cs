@@ -3,20 +3,19 @@ using UnityEngine;
 
 public class Align : Movement
 {
-    public Agent Target;
     public float MaxAngularAcceleration;
     public float MaxRotation;
     public float targetRadius;
     public float slowRadius;
     private float timeToTarget = 0.1f;
 
-    public override SteeringOutput GetSteering(Agent character)
+    public override SteeringOutput GetSteering(Kinematic character)
     {
         SteeringOutput result;
 
-        float rotation = Target.Orientation - character.Orientation;
+        float rotation = m_target.Orientation - character.Orientation;
 
-        rotation = MapToRange(character.Orientation, Target.Orientation);
+        rotation = MapToRange(character.Orientation, m_target.Orientation);
         float rotationSize = Mathf.Abs(rotation);
 
         if(rotationSize < targetRadius)

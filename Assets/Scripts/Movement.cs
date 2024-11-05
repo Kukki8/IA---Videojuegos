@@ -2,8 +2,30 @@ using UnityEngine;
 
 public abstract class Movement : MonoBehaviour
 {
-    public abstract SteeringOutput GetSteering(Agent character);
+    public Agent Target;
     public bool IsKinematic;
+
+    protected Kinematic m_target;
+
+    protected virtual void Start()
+    {
+        if(Target != null){
+            m_target = Target.KinematicData;
+        }else{
+            m_target = new Kinematic(Vector3.zero, 0, Vector3.zero, 0);
+        }
+        
+    }
+
+    protected void Update()
+    {
+        if(Target != null){
+            m_target = Target.KinematicData;
+        }
+    }
+
+    public abstract SteeringOutput GetSteering(Kinematic character);
+
     public float NewOrientation(Vector3 velocity, float current)
     {
 
