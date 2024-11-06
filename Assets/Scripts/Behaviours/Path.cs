@@ -9,26 +9,28 @@ public class Path : MonoBehaviour
     {
         int index = 0;
         float distance = int.MaxValue;
-
-        int current = lastParam%Segments.Length;
-        Debug.Log("Inicial" + current);
-        for(int i = 0; i < Segments.Length; i++)
-        {
-         
-            if(current == lastParam){
-                current = (current+1)%Segments.Length;
-                continue;
-            }
-            Vector3 direction = Segments[current].position - position;
-            if(direction.magnitude < distance)
-            {
-                index = current;
-                distance = direction.magnitude;
-            }
-            current = (current+1)%Segments.Length;
-            Debug.Log("Current" + current);
+        if((Segments[lastParam].position - position).magnitude < 1.0f){
+            return lastParam + 1;
         }
-        return index;
+        // int current = lastParam%Segments.Length;
+        // Debug.Log("Inicial" + current);
+        // for(int i = 0; i < Segments.Length; i++)
+        // {
+         
+        //     if(current == lastParam){
+        //         current = (current+1)%Segments.Length;
+        //         continue;
+        //     }
+        //     Vector3 direction = Segments[current].position - position;
+        //     if(direction.magnitude < distance)
+        //     {
+        //         index = current;
+        //         distance = direction.magnitude;
+        //     }
+        //     current = (current+1)%Segments.Length;
+        //     Debug.Log("Current" + current);
+        // }
+        return lastParam;
     }
     public Vector3 GetPosition(int param)
     {
