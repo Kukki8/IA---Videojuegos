@@ -20,6 +20,7 @@ public class PFChaseTheRabbit : Seek
         currentParam = Path.GetParam(character.Position, currentPos);
 
         int targetParam = (currentParam + pathOffset)%Path.Segments.Length;
+        currentPos = targetParam;
 
         Vector3 position = Path.GetPosition(targetParam);
 

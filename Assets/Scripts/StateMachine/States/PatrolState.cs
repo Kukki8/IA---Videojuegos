@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PatrolState : State
 {
-    public PredictivePF PredictivePF;
+    public PFChaseTheRabbit PredictivePF;
     public LookWheUGoin LookWYG;
     private SteeringOutput m_steeringOutput;
     private Agent m_agent;
@@ -39,6 +39,5 @@ public class PatrolState : State
         m_steeringOutput.Angular += steeringOutput.Angular * LookWYG.weight;
         
         m_agent.SetSteeringOutput(m_steeringOutput);
-        Debug.Log("Updating");
     }
 }

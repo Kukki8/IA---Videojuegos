@@ -22,7 +22,8 @@ public class PredictivePF : Seek
         currentParam = Path.GetParam(futurePos, currentPos);
         
         int targetParam = (currentParam + pathOffset)%Path.Segments.Length;
-
+        currentPos = targetParam;
+        
         Vector3 position = Path.GetPosition(targetParam);
 
         if(position == Vector3.zero)
