@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StateMachine : MonoBehaviour
@@ -12,6 +10,7 @@ public class StateMachine : MonoBehaviour
         
         if(InitialState != null){
             m_currentState = InitialState;
+            m_currentState.OnEntry();
         }
     }
 

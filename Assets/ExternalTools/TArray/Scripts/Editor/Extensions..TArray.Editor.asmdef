@@ -1,0 +1,17 @@
+{
+    "name": "Extensions.TArray.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8840b70b5d380d344b9f9c54f5aa5774",
+        "GUID:392131e5f6b1faa4caa0c68e6b5d7536"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

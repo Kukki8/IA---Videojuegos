@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PFChaseTheRabbit : Seek
@@ -7,6 +9,7 @@ public class PFChaseTheRabbit : Seek
     public int pathOffset;
     public int currentParam;
     public int currentPos;
+    public bool isCircular = true;
     Kinematic m_explicitTarget;
 
     protected override void Start()
@@ -19,8 +22,25 @@ public class PFChaseTheRabbit : Seek
     {
         currentParam = Path.GetParam(character.Position, currentPos);
 
-        int targetParam = (currentParam + pathOffset)%Path.Segments.Length;
+        int targetParam = currentParam + pathOffset;
+        
+        if(targetParam >= Path.Segments.Count)
+        {
+            Debug.Log("Termino el Path");
+            currentPos = 0;
+
+            if(isCircular)
+            {
+                targetParam = (currentParam + pathOffset)%Path.Segments.Count;
+            }else{
+                return new SteeringOutput();
+            }
+            
+            
+        }
+
         currentPos = targetParam;
+        
 
         Vector3 position = Path.GetPosition(targetParam);
 
@@ -41,6 +61,13 @@ public class PFChaseTheRabbit : Seek
         m_explicitTarget.Orientation = target.Orientation;
         m_explicitTarget.Velocity = target.Velocity;
         m_explicitTarget.Rotation = target.Rotation;
+    }
+
+    public void SetPath(List<Transform> path)
+    {
+        Path.SetSegments(path);
+        currentPos = 0;
+        currentParam = 0;
     }
 
 }

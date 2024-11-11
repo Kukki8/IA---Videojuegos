@@ -1,14 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using Priority_Queue;
 
 public class Node : MonoBehaviour
 {
-    public Vector3 Location;
-    private bool m_visited = false;
     public bool Reacheable = true;
     public int ID;
 
     public List<Node> Neighbors;
 
+}
+
+public class NodeRecord: FastPriorityQueueNode
+{
+    public Node Node;
+    public float CostSoFar;
+
+    public NodeRecord(Node node)
+    {
+        Node = node;
+    }
 }
