@@ -54,4 +54,9 @@ public abstract class Movement : MonoBehaviour
         return direction;
     }
 
+    public void CreateTarget(Transform targetPos)
+    {
+        m_target.Position = targetPos.position;
+        m_target.Orientation = targetPos.eulerAngles.y * Mathf.Deg2Rad;
+    }
 }

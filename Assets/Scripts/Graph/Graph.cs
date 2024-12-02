@@ -16,6 +16,7 @@ public class Graph : MonoBehaviour
     public int ElementsPerCol => SizeY/Offset - 1;
     public GameObject NodePrefab;
     public float TransitionCost = 1;
+    public bool UseTactical = false;
     private Dictionary<Node, Node> cameFrom = new Dictionary<Node, Node>();
 
     public void Awake()
@@ -133,7 +134,7 @@ public class Graph : MonoBehaviour
  
     }
 
-    public List<Transform> AStar(Node start, Node end)
+    public List<Transform> AStar(Node start, Node end, bool isEnemy = false)
     {
         cameFrom.Clear();
         NodeRecord startRecord = new NodeRecord(start);
@@ -161,7 +162,7 @@ public class Graph : MonoBehaviour
                     continue;
                 }
 
-                float newCost = current.CostSoFar + TransitionCost;
+                float newCost = current.CostSoFar + CostToMove(next);
                 if(!visited.ContainsKey(next))
                 {
                     visited[next] = new NodeRecord(next);
@@ -202,8 +203,26 @@ public class Graph : MonoBehaviour
 
         int i = Mathf.RoundToInt((SizeY-1)*y);
 
-        Debug.Log("i = " + i + " j = " + j);
         return nodes[i,j];
     }
 
+    private float CostToMove(Node node,bool isEnemy = false)
+    {
+
+        float result = TransitionCost;
+
+        if(UseTactical && node.IsTactical){
+
+            float sum = 0;
+            List<TacticalQuality> qualities = isEnemy ? node.EnemyQualities : node.CharacterQualities;
+
+            foreach(TacticalQuality quality in qualities)
+            {
+                sum += quality.Weight + quality.Value;
+            }
+
+            result += sum;
+        }
+        return result;
+    }
 }

@@ -1,15 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using Priority_Queue;
 
+[System.Serializable]
+public struct TacticalQuality
+{
+    public float Value;
+    public float Weight;
+
+}
 public class Node : MonoBehaviour
 {
     public bool Reacheable = true;
     public int ID;
-
+    public List<TacticalQuality> EnemyQualities;
+    public List<TacticalQuality> CharacterQualities;
     public List<Node> Neighbors;
+    public bool IsTactical;
+    
 
 }
 

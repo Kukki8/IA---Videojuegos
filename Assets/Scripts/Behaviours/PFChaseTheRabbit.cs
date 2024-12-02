@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PFChaseTheRabbit : Seek
@@ -26,7 +25,6 @@ public class PFChaseTheRabbit : Seek
         
         if(targetParam >= Path.Segments.Count)
         {
-            Debug.Log("Termino el Path");
             currentPos = 0;
 
             if(isCircular)
@@ -69,5 +67,10 @@ public class PFChaseTheRabbit : Seek
         currentPos = 0;
         currentParam = 0;
     }
+
+    public void ResetPath()
+    {
+        Path.ResetSegments();
+    }  
 
 }

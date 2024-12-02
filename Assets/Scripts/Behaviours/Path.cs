@@ -4,10 +4,10 @@ using UnityEngine;
 public class Path : MonoBehaviour
 {
     public List<Transform> Segments;
+    public float DistanceToNode = 0.8f;
     public int GetParam(Vector3 position, int lastParam)
     {
-
-        if((Segments[lastParam].position - position).magnitude < 0.8f){
+        if((Segments[lastParam].position - position).magnitude < DistanceToNode){
             return lastParam + 1;
         }
 
@@ -26,5 +26,10 @@ public class Path : MonoBehaviour
     {
         Segments = segments;
     }
+
+    public void ResetSegments()
+    {
+        Segments.Clear();
+    }  
 
 }

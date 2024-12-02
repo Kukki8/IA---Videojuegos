@@ -43,14 +43,14 @@ public class Agent : MonoBehaviour
         transform.eulerAngles = new Vector3(0,KinematicData.Orientation*Mathf.Rad2Deg,0);
 
 
-        if(KinematicData.Velocity != Vector3.zero)
-        {
-            animator.SetBool("Walk",true);
-        }
-        else
-        {
-            animator.SetBool("Walk",false);
-        }
+        // if(KinematicData.Velocity != Vector3.zero)
+        // {
+        //     animator.SetBool("Walk",true);
+        // }
+        // else
+        // {
+        //     animator.SetBool("Walk",false);
+        // }
 
         if(Stop){
 
@@ -87,12 +87,6 @@ public class Agent : MonoBehaviour
     {
         m_steeringOutput = steeringOutput;
     }
-
-
-
-
-
-
 
 
 
