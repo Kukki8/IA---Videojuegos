@@ -43,7 +43,7 @@ public class StateMachine : MonoBehaviour
         }
         if(m_triggered != null){
             State targetedState = m_triggered.GetTargetState();
-
+            Debug.Log(targetedState.name);
             m_currentState.OnExit();
             m_triggered.OnTransition();
             targetedState.OnEntry();

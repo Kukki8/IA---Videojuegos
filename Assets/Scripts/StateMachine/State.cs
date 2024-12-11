@@ -4,7 +4,7 @@ public abstract class State : MonoBehaviour
 {
 
     public Transition[] Transitions;
-
+    protected StateMachine m_stateMachine;
     public virtual void OnUpdate()
     {
 
@@ -21,6 +21,8 @@ public abstract class State : MonoBehaviour
 
     public void Initialize(StateMachine machine)
     {
+        m_stateMachine = machine;
+
         for(int i = 0; i < Transitions.Length ; i++)
         {
             Transitions[i].SetStateMachine(machine);

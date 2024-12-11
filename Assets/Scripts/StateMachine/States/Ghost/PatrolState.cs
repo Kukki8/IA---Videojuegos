@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PatrolState : State
 {
-    public PFChaseTheRabbit PredictivePF;
+    public PFChaseTheRabbit PredictivePF; 
     public LookWheUGoin LookWYG;
     public Transform[] EndGoals;
     private SteeringOutput m_steeringOutput;
@@ -18,7 +18,6 @@ public class PatrolState : State
 
     public override void OnEntry()
     {
-        
         m_goalIndex = CalculateEndGoal();
         CalculatePath();
         m_agent.animator.SetBool("Walk",true);

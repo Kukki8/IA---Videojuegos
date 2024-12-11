@@ -20,7 +20,7 @@ public class PFChaseTheRabbit : Seek
     public override SteeringOutput GetSteering(Kinematic character)
     {
         currentParam = Path.GetParam(character.Position, currentPos);
-
+        
         int targetParam = currentParam + pathOffset;
         
         if(targetParam >= Path.Segments.Count)
@@ -33,7 +33,6 @@ public class PFChaseTheRabbit : Seek
             }else{
                 return new SteeringOutput();
             }
-            
             
         }
 

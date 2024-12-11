@@ -3,6 +3,7 @@ public class Flee : Movement
 {
     public float MaxAcceleration;
     public float radius;
+    public bool Stop;
 
     public override SteeringOutput GetSteering(Kinematic character)
     {
@@ -11,7 +12,7 @@ public class Flee : Movement
         result.Linear =  character.Position - m_target.Position;
 
         // Radio exterior para dejar de huir
-        if(result.Linear.magnitude > radius){
+        if(result.Linear.magnitude > radius && Stop){
             return new SteeringOutput();
         }
 
