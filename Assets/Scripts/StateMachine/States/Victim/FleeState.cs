@@ -6,7 +6,7 @@ public class FleeState : State
 {
     public Flee Flee;
     public LookWheUGoin LookWYG;
-    public float FleeRange;
+    public ObstacleAvoidance ObstacleAvoidance;
     private SteeringOutput m_steeringOutput;
     private Agent m_agent;
     protected void Start()
@@ -37,6 +37,11 @@ public class FleeState : State
         m_steeringOutput.Linear += steeringOutput.Linear * LookWYG.weight;
         m_steeringOutput.Angular += steeringOutput.Angular * LookWYG.weight;
         
+        
+        steeringOutput = ObstacleAvoidance.GetSteering(m_agent.KinematicData);
+        m_steeringOutput.Linear += steeringOutput.Linear * ObstacleAvoidance.weight;
+        m_steeringOutput.Angular += steeringOutput.Angular * ObstacleAvoidance.weight;
+
         m_agent.SetSteeringOutput(m_steeringOutput);
     }
 

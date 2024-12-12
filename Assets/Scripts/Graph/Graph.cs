@@ -136,6 +136,11 @@ public class Graph : MonoBehaviour
 
     public List<Transform> AStar(Node start, Node end, bool isEnemy = false)
     {
+        if(start.ID == end.ID)
+        {
+            return new List<Transform>(){end.transform};
+        }
+        
         cameFrom.Clear();
         NodeRecord startRecord = new NodeRecord(start);
         startRecord.CostSoFar = 0;

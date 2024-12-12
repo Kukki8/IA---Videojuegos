@@ -22,7 +22,7 @@ public class Agent : MonoBehaviour
     SteeringOutput m_steeringOutput;
 
     bool m_isKinematic = false;
-
+    
     void Start()
     {
         m_steeringOutput.Linear = Vector3.zero;
@@ -41,16 +41,6 @@ public class Agent : MonoBehaviour
         KinematicData.Update(Time.deltaTime, m_steeringOutput, MaxSpeed, m_isKinematic);
         transform.position = KinematicData.Position;
         transform.eulerAngles = new Vector3(0,KinematicData.Orientation*Mathf.Rad2Deg,0);
-
-
-        // if(KinematicData.Velocity != Vector3.zero)
-        // {
-        //     animator.SetBool("Walk",true);
-        // }
-        // else
-        // {
-        //     animator.SetBool("Walk",false);
-        // }
 
         if(Stop){
 

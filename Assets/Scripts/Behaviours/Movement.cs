@@ -56,6 +56,11 @@ public abstract class Movement : MonoBehaviour
 
     public void CreateTarget(Transform targetPos)
     {
+        if(m_target == null)
+        {
+            m_target = new Kinematic(Vector3.zero, 0, Vector3.zero, 0);
+        }
+
         m_target.Position = targetPos.position;
         m_target.Orientation = targetPos.eulerAngles.y * Mathf.Deg2Rad;
     }

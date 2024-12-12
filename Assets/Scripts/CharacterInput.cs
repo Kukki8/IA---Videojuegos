@@ -20,6 +20,16 @@ public class CharacterInput : MonoBehaviour
         moveDirection += cam.transform.right * Input.GetAxisRaw("Horizontal");
         moveDirection.y = 0;
 
+        if(moveDirection != Vector3.zero)
+        {
+            character.animator.SetBool("Walk",true);
+        }
+        else
+        {
+            character.animator.SetBool("Walk",false);
+        
+        }
+
         Vector3 rotation = new Vector3(Input.GetAxis("Mouse X"), 0, 0);
 
         float angle = (character.transform.eulerAngles - rotation).y;
